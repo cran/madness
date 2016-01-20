@@ -192,6 +192,57 @@ test_that("just blockrep",{#FOLDUP
 	# sentinel:
 	expect_true(TRUE)
 })#UNFOLD
+test_that("sumprodmaxmin?",{#FOLDUP
+	yt <- 'any'
+	xt <- 'anx'
+
+	set.char.seed("820d69e3-9140-40b3-8b78-130d48a84b99")
+	for (nr in c(4,6)) {
+		xval <- matrix(1 + runif(nr*nr),nrow=nr)
+		yval <- matrix(1 + runif(nr*nr),nrow=nr)
+		xddd <- matrix(rnorm(length(xval)*5),ncol=5)
+		yddd <- matrix(rnorm(length(yval)*5),ncol=5)
+
+		for (pnan in c(0,25)) {
+			if (pnan > 0) {
+				xval[xval < 1 + (pnan/100)] <- NA
+				yval[yval < 1 + (pnan/100)] <- NA
+			}
+			xmad <- madness(xval,xddd,vtag=yt,xtag=xt)
+			ymad <- madness(yval,yddd,vtag=yt,xtag=xt)
+
+			for (narm in c(FALSE,TRUE)) {
+				blah <- sum(xmad,na.rm=narm)
+				blah <- sum(xmad,ymad,na.rm=narm)
+				blah <- sum(xmad,ymad,xval,na.rm=narm)
+				blah <- prod(xmad,na.rm=narm)
+				blah <- prod(xmad,ymad,na.rm=narm)
+				blah <- prod(xmad,ymad,xval,na.rm=narm)
+
+				blah <- max(xmad,na.rm=narm)
+				blah <- max(xmad,ymad,na.rm=narm)
+				blah <- max(ymad,xmad,na.rm=narm)
+				blah <- max(xmad,ymad,xval,na.rm=narm)
+				blah <- max(xmad,ymad,xval,yval,na.rm=narm)
+				# these are *not* supported yet. bleah.
+				#blah <- max(xmad,xval,ymad,na.rm=narm)
+				#blah <- max(xval,xmad,ymad,na.rm=narm)
+
+				blah <- min(xmad,na.rm=narm)
+				blah <- min(xmad,ymad,na.rm=narm)
+				blah <- min(ymad,xmad,na.rm=narm)
+				blah <- min(xmad,ymad,xval,na.rm=narm)
+				blah <- min(xmad,ymad,xval,yval,na.rm=narm)
+				# these are *not* supported yet. bleah.
+				#blah <- min(xmad,xval,ymad,na.rm=narm)
+				#blah <- min(xval,xmad,ymad,na.rm=narm)
+			}
+		}
+	}
+
+	# sentinel:
+	expect_true(TRUE)
+})#UNFOLD
 test_that("outer?",{#FOLDUP
 	yt <- 'any'
 	xt <- 'anx'
@@ -280,6 +331,22 @@ test_that("vech",{#FOLDUP
 	# sentinel:
 	expect_true(TRUE)
 })#UNFOLD
+test_that("eigen?",{#FOLDUP
+	yt <- 'any'
+	xt <- 'anx'
+	set.char.seed("b41fdb74-7fa4-4cbc-908d-4c7763403212")
+
+	for (nr in c(4)) {
+		xval <- matrix(1 + runif(nr*nr),nrow=nr)
+		ddd <- matrix(rnorm(length(xval)*5),ncol=5)
+		vvv <- crossprod(matrix(rnorm(100*ncol(ddd)),ncol=ncol(ddd)))
+		xmad <- madness(xval,ddd,vtag=yt,xtag=xt,varx=vvv)
+		foo <- eigen(xmad + t(xmad))
+	}
+
+	# sentinel:
+	expect_true(TRUE)
+})#UNFOLD
 test_that("theta",{#FOLDUP
 	# first on arrays...
 	set.char.seed('d8ccbb36-1002-4c9e-81d9-0ee6b173047a')
@@ -301,21 +368,39 @@ test_that("theta",{#FOLDUP
 })#UNFOLD
 test_that("twomoments",{#FOLDUP
 	# first on arrays...
-	set.char.seed('818fae1e-30b3-4bcb-bb54-691f4c8d05ae')
-	MV <- array(rnorm(100*3),dim=c(100,3))
-	th <- twomoments(MV)
-	MV <- array(rnorm(100*3*3),dim=c(100,3,3))
-	th <- twomoments(MV)
-	MV <- array(rnorm(100*3*3*3),dim=c(100,3,3,3))
-	th <- twomoments(MV)
-	th <- twomoments(MV,xtag='FOO')
-	th <- twomoments(MV,xtag='FOO',df=0)
+	set.char.seed('34b7717b-ddff-473a-98d1-422b040b6d82')
+
+	checkem <- list(array(rnorm(100*3),dim=c(100,3)),
+								 	array(rnorm(100*3*3),dim=c(100,3,3)),
+									array(rnorm(100*3*3*3),dim=c(100,3,3,3)))
+
+	for (ccc in seq_along(checkem)) {
+		MV <- checkem[[ccc]]
+		th <- twomoments(MV)
+		th <- twomoments(MV,xtag='FOO')
+		th <- twomoments(MV,xtag='FOO',df=0)
+		th <- twomoments(MV,xtag='FOO',df=0,diag.only=TRUE)
+		th <- twomoments(MV,xtag='FOO',df=0,diag.only=TRUE,vcov.func=vcov)
+	}
 
 	# and as data frame.
 	MV <- data.frame(a=runif(100),b=rnorm(100),c=exp(runif(100)))
 	th <- twomoments(MV)
 	th <- twomoments(MV,xtag='FOO')
 	th <- twomoments(MV,xtag='FOO',df=0)
+	th <- twomoments(MV,xtag='FOO',df=0,diag.only=TRUE)
+
+	# sentinel:
+	expect_true(TRUE)
+})#UNFOLD
+test_that("to_objective",{#FOLDUP
+	set.char.seed('1407dc0a-ca1b-4620-b436-e13df111b6ab')
+	
+	MV <- array(rnorm(100*3),dim=c(100,3))
+	madM <- madness(MV)
+	Mnorm <- norm(madM)
+	to_objective(Mnorm)
+	expect_error(dumb <- to_objective(madM))
 
 	# sentinel:
 	expect_true(TRUE)
