@@ -4,8 +4,9 @@
 
 [![Build Status](https://travis-ci.org/shabbychef/madness.png)](https://travis-ci.org/shabbychef/madness)
 [![codecov.io](http://codecov.io/github/shabbychef/madness/coverage.svg?branch=master)](http://codecov.io/github/shabbychef/madness?branch=master)
-[![CRAN](http://www.r-pkg.org/badges/version/madness)](http://cran.rstudio.com/package=madness) 
+[![CRAN](http://www.r-pkg.org/badges/version/madness)](https://cran.r-project.org/package=madness)
 [![Downloads](http://cranlogs.r-pkg.org/badges/madness?color=brightgreen)](http://www.r-pkg.org/pkg/madness)
+[![Total](http://cranlogs.r-pkg.org/badges/grand-total/madness?color=green)](http://www.r-pkg.org/pkg/madness)
 
 'madness' is a 'Multivariate Automatic Differentiation' package for R. It allows one to compute and track the derivative of 
 multivariate to multivariate functions applied to concrete data via forward differentiation and the chain rule. 
@@ -167,6 +168,12 @@ print(vcov(mynorm))
 ## [1,] 0.0021
 ```
 
+-----------------
+
+![Delta Method All the Things!](tools/figure/GevbfLD.jpg)
+
+
+
 # Markowitz portfolio
 
 There are two utilities for easily computing `madness` objects representing the first two moments of an object.
@@ -205,9 +212,9 @@ print(vcov(markowitz))
 
 ```
 ##        [,1]    [,2]    [,3]
-## [1,]  0.303 -0.0478 -0.1436
-## [2,] -0.048  0.9924  0.0057
-## [3,] -0.144  0.0057  0.7508
+## [1,]  0.304 -0.0444 -0.1507
+## [2,] -0.044  0.9790  0.0046
+## [3,] -0.151  0.0046  0.7499
 ```
 
 ```r
@@ -219,7 +226,7 @@ print(wald)
 ##      [,1]
 ## [1,]  2.4
 ## [2,]  1.3
-## [3,]  2.5
+## [3,]  2.6
 ```
 
 ## Does that really work?
@@ -271,7 +278,7 @@ ph <- qplot(sample = retv[1, , 1], stat = "qq") + geom_abline(intercept = 0,
 print(ph)
 ```
 
-<img src="github_extra/figure/marksym_check-1.png" title="plot of chunk marksym_check" alt="plot of chunk marksym_check" width="600px" height="500px" />
+<img src="tools/figure/marksym_check-1.png" title="plot of chunk marksym_check" alt="plot of chunk marksym_check" width="600px" height="500px" />
 
 # Trace of the covariance matrix
 
@@ -320,7 +327,7 @@ ph <- qplot(sample = as.numeric(retv), stat = "qq") +
 print(ph)
 ```
 
-![plot of chunk matracer](github_extra/figure/matracer-1.png) 
+<img src="tools/figure/matracer-1.png" title="plot of chunk matracer" alt="plot of chunk matracer" width="600px" height="500px" />
 
 # Maximum eigenvalue of the covariance matrix
 
@@ -393,7 +400,7 @@ ph <- qplot(sample = as.numeric(retv), stat = "qq") +
 print(ph)
 ```
 
-![plot of chunk cosym_mo](github_extra/figure/cosym_mo-1.png) 
+<img src="tools/figure/cosym_mo-1.png" title="plot of chunk cosym_mo" alt="plot of chunk cosym_mo" width="600px" height="500px" />
 
 Why the bias? There are a number of possibilities:
 
