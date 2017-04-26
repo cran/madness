@@ -39,12 +39,18 @@ NULL
 #' @template etc
 NULL
 
+## MM: do _NOT_  setGeneric() on existing functions! (==> conflict other pkg methods!)
+# setGeneric('t', function(x) standardGeneric('t'))
+# Import these from Matrix !
+# setGeneric('tril', function(x,k=0,...) standardGeneric('tril'))
+# setGeneric('triu', function(x,k=0,...) standardGeneric('triu'))
+
+
 # transpose#FOLDUP
 
 #' @rdname reshapes
 #' @aliases t
 #' @exportMethod t
-setGeneric('t', function(x) standardGeneric('t'))
 #' @rdname reshapes
 #' @aliases t,madness-method
 setMethod("t", signature(x="madness"),
@@ -60,9 +66,8 @@ setMethod("t", signature(x="madness"),
 
 #' @rdname reshapes
 #' @aliases tril
+#' @importFrom Matrix tril
 #' @exportMethod tril
-setGeneric('tril', function(x,k=0,...) standardGeneric('tril'))
-# 2FIX: must I check if this has already been defined as a generic?
 #' @rdname reshapes
 #' @aliases tril,madness-method
 setMethod("tril", signature(x="madness"),
@@ -81,8 +86,8 @@ setMethod("tril", signature(x="madness"),
 
 #' @rdname reshapes
 #' @aliases triu
+#' @importFrom Matrix triu
 #' @exportMethod triu
-setGeneric('triu', function(x,k=0,...) standardGeneric('triu'))
 #' @rdname reshapes
 #' @aliases triu,madness-method
 setMethod("triu", signature(x="madness"),
@@ -116,6 +121,8 @@ setMethod("dim<-", signature(x="madness",value="ANY"),
 						new("madness", val=val, dvdx=dvdx, vtag=vtag, xtag=xtag, varx=varx)
 					})
 
+# 2FIX: should we propagate the `drop` argument?
+#
 # see http://stackoverflow.com/a/8057007/164611
 #' Extract parts of a \code{madness} value.
 #'
@@ -134,6 +141,21 @@ setMethod("[", signature(x="madness",i="ANY",j="ANY"),
 						dim(getidx) <- dim(x@val)
 						getidx[i,j,...] <- TRUE
 						val <- x@val[i,j,...,drop=FALSE]
+						dvdx <- x@dvdx[which(getidx),,drop=FALSE]
+
+						retv <- new("madness", val=val, dvdx=dvdx,
+												xtag=x@xtag,
+												vtag=paste0(x@vtag,'[...]'),
+												varx=x@varx)
+					})
+#' @rdname extract-methods
+#' @aliases [,madness,ANY,missing,ANY-method
+setMethod("[", signature(x="madness",i="ANY",j="missing"),
+					function(x,i,j,...,drop) {
+						getidx <- vector(length=length(x@val))
+						dim(getidx) <- dim(x@val)
+						getidx[i,...] <- TRUE
+						val <- x@val[i,...,drop=FALSE]
 						dvdx <- x@dvdx[which(getidx),,drop=FALSE]
 
 						retv <- new("madness", val=val, dvdx=dvdx,
