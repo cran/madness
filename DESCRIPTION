@@ -2,8 +2,8 @@ Package: madness
 Maintainer: Steven E. Pav <shabbychef@gmail.com>
 Authors@R: c(person(c("Steven", "E."), "Pav", role=c("aut","cre"),
     email="shabbychef@gmail.com"))
-Version: 0.2.2
-Date: 2017-04-25
+Version: 0.2.3
+Date: 2018-02-14
 License: LGPL-3
 Title: Automatic Differentiation of Multivariate Operations
 BugReports: https://github.com/shabbychef/madness/issues
@@ -23,7 +23,7 @@ Collate: 'AllClass.r' 'utils.r' 'Ops.r' 'bind.r' 'blockrep.r'
         'to_objective.r' 'trace.r' 'twomoments.r' 'vcov.r' 'vec.r'
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2017-04-26 04:53:12 UTC; spav
+Packaged: 2018-02-15 05:31:39 UTC; spav
 Author: Steven E. Pav [aut, cre]
 Repository: CRAN
-Date/Publication: 2017-04-26 05:36:59 UTC
+Date/Publication: 2018-02-15 23:15:22 UTC

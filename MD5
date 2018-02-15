@@ -1,4 +1,4 @@
-1a692a22ab64b7e353ecaeaeefcb788b *DESCRIPTION
+ecfcef75e0f4c19684168f2c84d36e0d *DESCRIPTION
 ca4ab2e1b4b20487f7f9ceb26a191505 *NAMESPACE
 1389b5f416dddbcdeb5b130b112aa61e *R/AllClass.r
 4494d21469ab29f0072de3f71a6b2491 *R/Ops.r
@@ -9,7 +9,7 @@ db5ea6c8a59d3828d68ec42ae5a14b5b *R/coerce.r
 65311526dcd09d1ec11f6e46cd319cbd *R/diag.r
 71663a50521f6424085e3bc017089fb2 *R/eigen.r
 e283660084cd7c2dfbdca5a32d888960 *R/elwise.r
-6be3f99edb8aaa75f598ba660a4770e5 *R/madness_pkg.r
+5ef3a0050d2d4f15c462cd90ff33f260 *R/madness_pkg.r
 4fa1e5774c3c9724a6c4a1f8c909146f *R/matwise.r
 d3743a86fbd645586eed46ee0187f1be *R/max.r
 0aaf78dcb7f7c28e1eca3f2521f2909b *R/norm.r
@@ -25,12 +25,12 @@ be3a7643d046d12c4df695e2668c8eea *R/to_objective.r
 432c9d6412702a1ab4cc1c9391ee4055 *R/utils.r
 022cdb8bbfc018b8504a80bc1740c1e6 *R/vcov.r
 b4aaa4c3e790c73bbd00e38ba799e3b9 *R/vec.r
-3c4a17ea7577b3d094c74ddf4e9d0678 *README.md
+c20ecfe21ec72a22d7cd7c2887ad60b1 *README.md
 8bd354c1f85929ae9f3ba8e8c0226f4c *build/vignette.rds
 866c3ad2feff2b5aa9da0bd45dc8c3c9 *inst/CITATION
-729403c44156aa096d6783ee89d96c9f *inst/doc/introducing_madness.pdf
+a7c5237d02b3d8b14b41d1c95e27735b *inst/doc/introducing_madness.pdf
 fe145137f43c3ac2ff9de9a5ad9bcebc *inst/doc/introducing_madness.pdf.asis
-0ef17a4119687ffaaa3c7a846ae123c2 *man/NEWS.Rd
+9a9e49822edf4414025756d5f262b476 *man/NEWS.Rd
 521b2a9b92c1e6c02b632c43f88b54d6 *man/accessor-methods.Rd
 d3ecc099a80a8e0ff3d3d9541c51c0f8 *man/arithops.Rd
 72301114d6490e4581b893f161657ae7 *man/as.Rd
@@ -64,7 +64,7 @@ a645014e48d03185884f1b436d1d83b4 *man/vcov.madness.Rd
 bcd9a3579be6780f087f5856c0d6ec71 *man/vec.Rd
 0d71ca37753abc931f9d20ef27d65ef9 *tests/run-all.R
 7f85ec935a9848f11b4b7eb925a2d10b *tests/testthat/test-basic.r
-2daaf13549a03df7aeb274e3ae7a5eb8 *tests/testthat/test-correctness.r
+d71747ffaedd38dac78d06914d5b9aee *tests/testthat/test-correctness.r
 a2bbed9dad6b3818ed99d7848ffa831b *tools/figure/GevbfLD.jpg
 316139b3a0841ce06e78001bf1c8cf0c *tools/figure/cosym_mo-1.png
 25d34998568981afb6855cfb79c48ad8 *tools/figure/marksym_check-1.png
