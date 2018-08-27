@@ -43,7 +43,6 @@
 #'
 #' Magnus, Jan R. and Neudecker, H. "Matrix Differential Calculus with Applications in Statistics and Econometrics."
 #' 3rd Edition. Wiley Series in Probability and Statistics: Texts and References Section (2007).
-#' \url{http://www.janmagnus.nl/misc/mdc2007-3rdedition}
 #'
 #' Magnus, Jan R. and Neudecker, H. "The elimination matrix: some lemmas and applications," 
 #' SIAM Journal on Algebraic Discrete Methods 1, no. 4 (1980): 422-449.
@@ -88,8 +87,15 @@ NULL
 #' News for package \sQuote{madness}.
 #'
 #' \newcommand{\pkg}{#1}
-#' \newcommand{\CRANpkg}{\href{https://CRAN.R-project.org/package=#1}{\pkg{#1}}}
+#' \newcommand{\CRANpkg}{\href{https://cran.r-project.org/package=#1}{\pkg{#1}}}
 #' \newcommand{\madness}{\CRANpkg{madness}}
+#'
+#' @section \madness{} Version 0.2.4 (2018-08-26) :
+#' \itemize{
+#' \item adding to unit tests.
+#' \item fix scalar to array promotion.
+#' \item fix broken vtag in aperm.
+#' }
 #'
 #' @section \madness{} Version 0.2.3 (2018-02-14) :
 #' \itemize{

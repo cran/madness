@@ -1,0 +1,24 @@
+
+2018-08-26 Steven E. Pav <shabbychef@gmail.com>
+* CRAN release, version 0.2.4
+* adding to tests.
+* fix scalar to array promotion.
+* fix aperm vtag bug.
+* add FF3 and stock returns data to build vignette.
+
+2018-02-14 Steven E. Pav <shabbychef@gmail.com>
+* CRAN emergency release, version 0.2.3
+* dumb down tests for alternative BLAS/LAPACK libraries.
+
+2017-04-26 Steven E. Pav <shabbychef@gmail.com>
+* CRAN emergency release, version 0.2.2
+
+2017-04-13 Steven E. Pav <shabbychef@gmail.com>
+* CRAN emergency release, version 0.2.1
+
+2014-02-14 Steven E. Pav <shabbychef@gmail.com>
+* first release
+
+2014-01-04 Steven E. Pav <shabbychef@gmail.com>
+* start work
+
