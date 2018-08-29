@@ -1,5 +1,5 @@
-67e8d235595355276929b0b794e6a3aa *ChangeLog
-ede3e0eca078af9bbad88600e4335764 *DESCRIPTION
+04041115729c7bc9ee6f6c5588117e22 *ChangeLog
+158d5ab7c4841acabc8ce5a1afa82e6a *DESCRIPTION
 ca4ab2e1b4b20487f7f9ceb26a191505 *NAMESPACE
 0b95bb721055416c36e214f2246a1ca0 *R/AllClass.r
 a74aa9a44713fb783f5be4781fe7af75 *R/Ops.r
@@ -11,7 +11,7 @@ d25d72a433eb72665cfd34fd0e26675d *R/data.r
 65311526dcd09d1ec11f6e46cd319cbd *R/diag.r
 71663a50521f6424085e3bc017089fb2 *R/eigen.r
 e283660084cd7c2dfbdca5a32d888960 *R/elwise.r
-5d3077290cf9bde435d173839e18a970 *R/madness_pkg.r
+0a6d615ac317148b3ac5ce48cb966550 *R/madness_pkg.r
 4fa1e5774c3c9724a6c4a1f8c909146f *R/matwise.r
 d3743a86fbd645586eed46ee0187f1be *R/max.r
 0aaf78dcb7f7c28e1eca3f2521f2909b *R/norm.r
@@ -32,9 +32,9 @@ adda9510651b84d1f266b6b276f62692 *README.md
 8c0eb32b776e5e1913d15de23b695c4f *data/stock_returns.rda
 153885acc5d20a8d12737bd568353f24 *data/wff3.rda
 866c3ad2feff2b5aa9da0bd45dc8c3c9 *inst/CITATION
-bae82610fedef6c4d7d98f9a24615cbe *inst/doc/introducing_madness.Rnw
-9c9555c72a8f9dff60d0191003bf04d4 *inst/doc/introducing_madness.pdf
-8ce901b1310ac633e67964906583d03f *man/NEWS.Rd
+436bb4a29f448bba7a32b571431a426b *inst/doc/introducing_madness.Rnw
+23984a097b2856474a1dfcb3b0da120f *inst/doc/introducing_madness.pdf
+92f3451a811dbc2957aaeee8c765cef5 *man/NEWS.Rd
 521b2a9b92c1e6c02b632c43f88b54d6 *man/accessor-methods.Rd
 d3ecc099a80a8e0ff3d3d9541c51c0f8 *man/arithops.Rd
 72301114d6490e4581b893f161657ae7 *man/as.Rd
@@ -75,5 +75,5 @@ bcd9a3579be6780f087f5856c0d6ec71 *man/vec.Rd
 33e810f3117c59c94f8f95800ca6e8aa *tests/testthat/test-basic.r
 e80a1fe112c2ed4f33f128d840a15cb1 *tests/testthat/test-correctness.r
 a2bbed9dad6b3818ed99d7848ffa831b *tools/figure/GevbfLD.jpg
-f0edfe37ad54148fccc669a03ede12a4 *vignettes/common.bib
-bae82610fedef6c4d7d98f9a24615cbe *vignettes/introducing_madness.Rnw
+34e1bb2b6b6a3af80351d24697a1f1c9 *vignettes/common.bib
+436bb4a29f448bba7a32b571431a426b *vignettes/introducing_madness.Rnw
