@@ -37,7 +37,6 @@ NULL
 #' @include AllClass.r
 #' @inheritParams base::norm
 #' @param x \code{madness} object.
-#' @param ... further arguments passed to or from other methods.
 #' @return the matrix norm, a non-negative number.
 #' @note This should probably be fixed to return a scalar, not a 1 by 1 matrix?
 #' @name norm
@@ -110,7 +109,6 @@ setMethod("maxeig", signature(x="madness"),
 
 
 #' @name norm
-#' @rdname norm
 #' @aliases norm norm,madness-method norm,madness,missing-method
 #' @exportMethod norm
 #' @rdname norm
