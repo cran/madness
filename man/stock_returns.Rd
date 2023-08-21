@@ -4,7 +4,8 @@
 \name{stock_returns}
 \alias{stock_returns}
 \title{Stock Returns Data}
-\format{A \code{data.frame} object with 1930 observations and 3 columns
+\format{
+A \code{data.frame} object with 1930 observations and 3 columns
 The columns are defined as follows:
 \describe{
  \item{\code{Date}}{The closing date at which the return was observed, as a \code{Date} object.
@@ -15,12 +16,15 @@ The columns are defined as follows:
  \item{\code{IBM}}{The simple returns of IBM common shares, based on
  weekly (adjusted) close prices.  A value of \code{0.01} corresponds to a one percent return.
  Close prices are adjusted for splits and dividends by Quandl.}
-}}
+}
+}
 \source{
-Data were collated from Quandl on August 25, 2018, from
-\url{https://www.quandl.com/data/EOD/AAPL-Apple-Inc-AAPL-Stock-Prices-Dividends-and-Splits}
+Data were collated from Quandl on August 25, 2018. This data is no longer
+freely available from Quandl, but may be available directly from Nasdaq,
+see:
+\url{https://www.nasdaq.com/market-activity/stocks/aapl/historical}
 and 
-\url{https://www.quandl.com/data/EOD/IBM-International-Business-Machines-Corporation-IBM-Stock-Prices-Dividends-and-Splits}.
+\url{https://www.nasdaq.com/market-activity/stocks/ibm/historical}.
 }
 \usage{
 data(stock_returns)

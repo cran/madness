@@ -3,6 +3,8 @@
 \docType{package}
 \name{madness-pkg}
 \alias{madness-pkg}
+\alias{_PACKAGE}
+\alias{madness-package}
 \title{Multivariate Automatic Differentiation.}
 \description{
 Automatic Differentiation of Matrix Operations.
@@ -20,12 +22,12 @@ GNU Lesser General Public License for more details.
 }
 
 \references{
-Griewank, Andreas and Walther, Andrea. "Evaluating Derivatives: principles and techniques of algorithmic differentiation."
-SIAM (2008).
-
 Petersen, Kaare Brandt and Pedersen, Michael Syskind. "The Matrix Cookbook."
 Technical University of Denmark (2012). 
-\url{http://www2.imm.dtu.dk/pubdb/p.php?3274}
+\url{http://www2.imm.dtu.dk/pubdb/pubs/3274-full.html}
+
+Griewank, Andreas and Walther, Andrea. "Evaluating Derivatives: principles and techniques of algorithmic differentiation."
+SIAM (2008).
 
 Magnus, Jan R. and Neudecker, H. "Matrix Differential Calculus with Applications in Statistics and Econometrics."
 3rd Edition. Wiley Series in Probability and Statistics: Texts and References Section (2007).
@@ -37,15 +39,20 @@ SIAM Journal on Algebraic Discrete Methods 1, no. 4 (1980): 422-449.
 Magnus, Jan R. and Neudecker, H. "Symmetry, 0-1 Matrices and Jacobians,"
 Econometric Theory 2 (1986): 157-190.
 \url{http://www.janmagnus.nl/papers/JRM014.pdf},
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/shabbychef/madness}
+  \item Report bugs at \url{https://github.com/shabbychef/madness/issues}
+}
 
-Fackler, Paul L. "Notes on Matrix Calculus." (2005).
-\url{http://www4.ncsu.edu/~pfackler/MatCalc.pdf}
-
-MM: DO use  @importFrom (whimps use full imports ..) !
 }
 \author{
 Steven E. Pav \email{shabbychef@gmail.com}
 
-Steven E. Pav \email{shabbychef@gmail.com}
+\strong{Maintainer}: Steven E. Pav \email{shabbychef@gmail.com} (\href{https://orcid.org/0000-0002-4197-6195}{ORCID})
+
 }
+\keyword{internal}
 \keyword{package}
